@@ -10,7 +10,11 @@ spec:
   - jsonplaceholder.typicode.com
   location: MESH_EXTERNAL
   ports:
-  - name: tls
+  - number: 80
+    name: http
+    protocol: HTTP
+    targetPort: 443
+  - name: https #tls
     number: 443
-    protocol: TLS
+    protocol: HTTPS #TLS
   resolution: DNS

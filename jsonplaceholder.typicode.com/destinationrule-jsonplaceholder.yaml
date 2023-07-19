@@ -1,0 +1,14 @@
+apiVersion: networking.istio.io/v1beta1
+kind: DestinationRule
+metadata:
+  name: jsonplaceholder
+  namespace: frontend
+spec:
+  host: jsonplaceholder.typicode.com
+  trafficPolicy:
+    portLevelSettings:
+    - port:
+        number: 80
+      tls:
+        mode: SIMPLE
+        sni: "jsonplaceholder.typicode.com"
